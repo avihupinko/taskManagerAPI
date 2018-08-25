@@ -11,8 +11,8 @@ namespace TaskManagerAPI.DataProvider
 {
     public class TimeTaskProvider : ITimeTaskProvider
     {
-        //private readonly string connectionString = "Server=LAPTOP-GR4TL2UE;Database=TaskScheduler;Trusted_Connection=True;";
-        private readonly string connectionString = "Server=tcp:avihupinko.database.windows.net,1433;Initial Catalog=TaskScheduler;Persist Security Info=False;User ID=avihupinko;Password=@avi1990pin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private readonly string connectionString = "Server=LAPTOP-GR4TL2UE;Database=TaskScheduler;Trusted_Connection=True;";
+        //private readonly string connectionString = "Server=tcp:avihupinko.database.windows.net,1433;Initial Catalog=TaskScheduler;Persist Security Info=False;User ID=avihupinko;Password=@avi1990pin;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public async Task AddTask(TimeTask task)
         {
