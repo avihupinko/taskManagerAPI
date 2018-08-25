@@ -46,7 +46,7 @@ namespace TaskManagerAPI.Controllers
             tb.Description = Description;
             if (StartDate.Equals("null") && EndDate.Equals("null"))
             {
-                await this.timeTaskProvider.AddTask(tb);
+                await this.timeTaskProvider.UpdateTask(tb);
             }
             else
             {
@@ -76,6 +76,10 @@ namespace TaskManagerAPI.Controllers
                 await this.timeTaskProvider.AddTask(tb);
             } else
             {
+                //if (StartDate.Equals("null") || EndDate.Equals("null"))
+                //{
+                //    return "when using dates, both need to be sent";
+                //}
                 tb.StartDate = Convert.ToDateTime(StartDate);
                 tb.EndDate = Convert.ToDateTime(EndDate);
 
@@ -84,6 +88,7 @@ namespace TaskManagerAPI.Controllers
             if ( tb.StartDate > tb.EndDate)
             {
                 // TODO: throw exception
+                //throw new UriFormatException("start date cannot be after end date");
             }
             else
             {
