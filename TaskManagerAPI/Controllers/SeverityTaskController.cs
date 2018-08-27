@@ -8,11 +8,13 @@ using TaskManagerAPI.Models;
 using TaskManagerAPI.DataProvider;
 using System.IO;
 using System.Net.Http;
+using System.Web.Http.Cors;
 
 namespace TaskManagerAPI.Controllers
 {
     [Route("api/severityTask")]
     [ApiController]
+    [EnableCors("*", "*", "*")]
     public class SeverityTaskController : Controller
     {
         private ISeverityTaskProvider severityTaskProvider;

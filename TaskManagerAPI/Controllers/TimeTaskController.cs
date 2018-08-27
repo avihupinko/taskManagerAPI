@@ -9,11 +9,13 @@ using TaskManagerAPI.DataProvider;
 using System.IO;
 using System.Net.Http;
 using System.Net;
+using System.Web.Http.Cors;
 
 namespace TaskManagerAPI.Controllers
 {
     [Route("api/timeTask")]
     [ApiController]
+    [EnableCors("*", "*", "*")]
     public class TimeTaskController : Controller
     {
         private ITimeTaskProvider timeTaskProvider;

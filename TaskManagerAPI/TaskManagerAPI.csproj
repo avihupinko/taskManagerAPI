@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>2d93a7a3-3919-4b77-9cf8-d619d3964309</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.6" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameWorkCore.SqlServer" Version="2.1.2" />
     <PackageReference Include="Microsoft.EntityFrameWorkCore.SqlServer.Design" Version="1.1.6" />

@@ -19,6 +19,7 @@ namespace TaskManagerAPI
     {
         public Startup(IConfiguration configuration)
         {
+
             Configuration = configuration;
         }
 
@@ -27,6 +28,7 @@ namespace TaskManagerAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddTransient<ITimeTaskProvider, TimeTaskProvider>();
             services.AddTransient<ISeverityTaskProvider, SeverityTaskProvider>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -51,6 +53,8 @@ namespace TaskManagerAPI
             {
                 app.UseHsts();
             }
+            app.UseCors(builder => 
+                builder.WithOrigins("https://taskmanaggerwebapp.herokuapp.com").AllowAnyHeader());
 
             app.UseHttpsRedirection();
             app.UseMvc();
